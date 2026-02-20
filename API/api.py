@@ -16,11 +16,8 @@ def connect_to_api():
         exit()
 
 # fetch request
-def consult_data(client, location="RISARALDA", registers=10):
+def consult_data(client, location, registers=10):
     try:    
-        if location != "RISARALDA":
-            location = location.upper()
-
         results = client.get(database, departamento_nom=location, limit=registers)
         if not results:
             return None
